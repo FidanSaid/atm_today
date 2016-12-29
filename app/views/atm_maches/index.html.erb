@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Atm Maches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @atm_machs.each do |atm_mach| %>
+      <tr>
+        <td><%= atm_mach.address %></td>
+        <td><%= atm_mach.latitude %></td>
+        <td><%= atm_mach.longitude %></td>
+        <td><%= link_to 'Show', atm_mach %></td>
+        <td><%= link_to 'Edit', edit_atm_mach_path(atm_mach) %></td>
+        <td><%= link_to 'Destroy', atm_mach, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Atm mach', new_atm_mach_path %>
